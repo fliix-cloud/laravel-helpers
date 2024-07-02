@@ -1,0 +1,15 @@
+{
+    "name": "fliix/laravel-helpers",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Marc Werner"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "require": {}
+}
