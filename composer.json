@@ -11,5 +11,7 @@
             "src/helpers.php"
         ]
     },
-    "require": {}
+    "require": {
+        "illuminate/http": "^v11.13.0"
+    }
 }
