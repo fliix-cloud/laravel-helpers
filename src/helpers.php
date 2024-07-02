@@ -16,12 +16,10 @@ use Illuminate\Support\Facades\Http;
 if (!function_exists('sendPush')) {
 	function sendPush(string $configName, string $message, string $title = "", string $url = "", string $url_title = "", string $sound = ""): bool
 	{
-		global $pushConfig;
-
-		if (!empty($pushConfig[$configName])) {
+		if (!empty(config('services.pushover.'.$configName.'.token')) && !empty(config('services.pushover.'.$configName.'.user'))) {
 			$array = [
-				"token" => $pushConfig[$configName]["token"],
-				"user" => $pushConfig[$configName]["user"],
+				"token" => config('services.pushover.'.$configName.'.token'),
+				"user" => config('services.pushover.'.$configName.'.user'),
 				"message" => $message,
 				"title" => $title,
 				"url" => $url,
